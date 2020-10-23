@@ -1,0 +1,31 @@
+{
+  "name": "itsallgouda",
+  "version": "1.0.0",
+  "description": "## Project links",
+  "main": "server.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hannahtrask/UNIT3-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hannahtrask/UNIT3-backend/issues"
+  },
+  "homepage": "https://github.com/hannahtrask/UNIT3-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.10",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
