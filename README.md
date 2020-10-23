@@ -72,12 +72,11 @@ const plateSchema = new Schema ({
 
 | URL                         | HTTP Verb | Action | Description   |
 | ---                         | :---:     |  :---: | :---:         |
-| /plates                     | GET       | index  | get all       |
-| /plates                     | POST      | create | create new    |
-| /:foodId/addFoods/:plateId  | PUT       | update | add food to plate w/ :id   |
-| /plates/:id                 | GET       | show   | get single plate w/ :id  |
-| /plates/:mood               | GET       | show   | get single plate w/ :mood  |
-| /plates/:id                 | DELETE    | delete | delete single |
+| /moods                      | GET       | index  | get all       |
+| /moods                      | POST      | create | create new    |
+| /:foodId/addFoods/:moodsId  | PUT       | update | add food to mood w/ :id   |
+| /moods/:id                  | GET       | show   | get single mood w/ :id  |
+| /moods/:id                  | DELETE    | delete | delete single |
 
  
  ## MVP/Post MVP
