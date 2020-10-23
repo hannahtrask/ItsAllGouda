@@ -22,6 +22,7 @@ a snippet of the model/models that we'll be using and the seed data we will be p
 ### Model
 
 | URL | HTTP Verb | Action | Description   |
+| --- | :---: |  :---:  | :---: |
 | /.. | GET       | index  | get all       |
 | /.. | POST      | create | create new    |
 | /.. | PUT       | show   | get single    |
@@ -31,6 +32,7 @@ a snippet of the model/models that we'll be using and the seed data we will be p
 ## Related Model
 
 | URL | HTTP Verb | Action | Description   |
+| --- | :---: |  :---:  | :---: |
 | /.. | GET       | index  | get all       |
 | /.. | POST      | create | create new    |
 | /.. | PUT       | show   | get single    |
