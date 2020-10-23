@@ -4,6 +4,7 @@
 ## Project links
 
  - [Github project link](https://github.com/hannahtrask/UNIT3-backend)
+ - [Github frontend link](https://github.com/hannahtrask/UNIT3-frontend)
  - [Live project link](live project link on netlify)
 
 ## Project Description
