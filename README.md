@@ -74,7 +74,7 @@ const plateSchema = new Schema ({
 | ---                         | :---:     |  :---: | :---:         |
 | /moods                      | GET       | index  | get all       |
 | /moods                      | POST      | create | create new    |
-| /:foodId/addFoods/:moodsId  | PUT       | update | add food to mood w/ :id   |
+| /:foodId/addFoods/:moodsId  | PUT       | update | add food to mood w/ :id |
 | /moods/:id                  | GET       | show   | get single mood w/ :id  |
 | /moods/:id                  | DELETE    | delete | delete single |
 
