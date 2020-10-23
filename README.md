@@ -43,7 +43,7 @@ const moodSchema = new Schema ({
 
 #### Related Model — post MVP
 
-```
+```javascript
 const plateSchema = new Schema ({
   name: { type: String, required: true },
   author: String,
