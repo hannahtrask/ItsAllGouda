@@ -11,7 +11,7 @@
 
 The idea behind these models is based on the user story that you can open our app, enter or choose your mood, and the screen will populate with a bunch of food and drink items that match that mood. From that selection (a GET route) you'll be able to add that item to your plate (an UPDATE route). You can also create your own plate or food (a PUT route), and remove a food or plate you've created (a DELETE route).
 
-A couple of features we are hoping to have that involve the routes outline below: a myPlates section where the user "builds a meal" for themselves. A homepage where the user chooses a mood from a dropdown menu to populate matching foods. A create a food page where the user enters fields that match the keys outlined below, which can then be searched later in the user experience.
+A couple of features we are hoping to have that involve the routes outline below: a My Mood Foods section where the user can maintain a list of foods for themselves. A homepage where the user chooses a mood from a dropdown menu to populate foods that match that mood. A create a food page where the user enters fields that match the keys outlined below, which can then be searched later in the user experience.
 
 ## Backend
 
@@ -21,8 +21,7 @@ A couple of features we are hoping to have that involve the routes outline below
 const foodSchema = new Schema ({
   name: { type: String, required: true },
   author: String,
-  mood: { type: String, required: true },
-  type: { type: String, required: true },
+  course: { type: String, required: true },
   description: { type: String, required: true },
   img: { type: String, required: true }
 })
@@ -31,10 +30,24 @@ const foodSchema = new Schema ({
 #### Related Model
 
 ```
+const moodSchema = new Schema ({
+  name: { type: String, required: true }, 
+  foods: [
+    {
+      ref: 'Food',
+      type: mongoose.Schema.Types.ObjectId
+    }
+  ]
+})
+```
+
+#### Related Model — post MVP
+
+```
 const plateSchema = new Schema ({
   name: { type: String, required: true },
   author: String,
-  foods: [
+  mood-foods: [
     {
       ref: 'Food',
       type: mongoose.Schema.Types.ObjectId
@@ -51,7 +64,7 @@ const plateSchema = new Schema ({
 | --- | :---: |  :---:  | :---: |
 | /foods       | GET       | index  | get all       |
 | /foods       | POST      | create | create new    |
-| /foods/:mood | GET       | show   | get all with value :mood      |
+| /foods/:id   | GET       | show   | get one by id |
 | /foods/:id   | PUT       | update | update single |
 | /foods/:id   | DELETE    | delete | delete single |
 
@@ -84,29 +97,30 @@ const plateSchema = new Schema ({
 
 | Task | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---:  | :---: |
-| express server setup      | h | 1  | x   |
-| install dependencies      | h | 1  | x   |
-| connect mongoose/mongoDB  | h | 1  | x   |
-| seed data/route           | h | 1  | x   |
-| full CRUD model 1         | h | 1  | x   |
-| full CRUD related model   | h | 1  | x   |
-| deploy on Heroku          | h | 1  | x   |
-| Total                     | h | 7  | x   |
+| express server setup      | h | 2  | x   |
+| install dependencies      | h | 2  | x   |
+| connect mongoose/mongoDB  | h | 2  | x   |
+| seed data/route           | h | 2  | x   |
+| full CRUD model 1         | h | 2  | x   |
+| full CRUD related model   | h | 3  | x   |
+| deploy on Heroku          | h | 2  | x   |
+| Total                     | h | 15 | x   |
     
  ### Post MVP
 
   * add another model
   * full CRUD on another model
+  * multiple moods associated with one food
 
   ### Time Estimates
   
 | Task | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| add another model      | l | 2  | x |
-| full CRUD on new model | l | 3  | x |
-| Total                  | h | 5  | x |
+| add another model      | l | 4  | x |
+| full CRUD on new model | l | 5  | x |
+| Total                  | h | 9  | x |
 
-## Additional Resources
+## Additional Resources/Libraries
 
  - [MongoDB Cloud](https://cloud.mongodb.com/)
  - [Heroku](https://dashboard.heroku.com/)
