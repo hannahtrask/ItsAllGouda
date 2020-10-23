@@ -49,21 +49,22 @@ const plateSchema = new Schema ({
 
 | URL | HTTP Verb | Action | Description   |
 | --- | :---: |  :---:  | :---: |
-| /   | GET       | index  | get all       |
-| /.. | POST      | create | create new    |
-| /.. | PUT       | show   | get single    |
-| /.. | GET       | update | update single |
-| /.. | DELETE    | delete | delete single |
+| /foods       | GET       | index  | get all       |
+| /foods       | POST      | create | create new    |
+| /foods/:mood | GET       | show   | get all with value :mood      |
+| /foods/:id   | PUT       | update | update single |
+| /foods/:id   | DELETE    | delete | delete single |
 
 ## Related Model
 
-| URL | HTTP Verb | Action | Description   |
-| --- | :---: |  :---:  | :---: |
-| /.. | GET       | index  | get all       |
-| /.. | POST      | create | create new    |
-| /.. | PUT       | show   | get single    |
-| /.. | GET       | update | update single |
-| /.. | DELETE    | delete | delete single |
+| URL                         | HTTP Verb | Action | Description   |
+| ---                         | :---:     |  :---: | :---:         |
+| /plates                     | GET       | index  | get all       |
+| /plates                     | POST      | create | create new    |
+| /:foodId/addFoods/:plateId  | PUT       | update | add food to plate w/ :id   |
+| /plates/:id                 | GET       | show   | get single plate w/ :id  |
+| /plates/:mood               | GET       | show   | get single plate w/ :mood  |
+| /plates/:id                 | DELETE    | delete | delete single |
 
  
  ## MVP/Post MVP
@@ -112,7 +113,7 @@ const plateSchema = new Schema ({
 
 ## Code Snippet
 
-here's a code snippet or two we're all really proud of
+here's a code snippet or two we're all really proud of, add at the end of the project
 
 ```
 code snippet
