@@ -9,13 +9,38 @@
 
 ## Project Description
 
-here is a description of the way this backend will be used in our app
+The idea behind these models is based on the user story that you can open our app, enter or choose your mood, and the screen will populate with a bunch of food and drink items that match that mood. From that selection (a GET route) you'll be able to add that item to your plate (an UPDATE route). You can also create your own plate or food (a PUT route), and remove a food or plate you've created (a DELETE route).
+
+A couple of features we are hoping to have that involve the routes outline below: a myPlates section where the user "builds a meal" for themselves. A homepage where the user chooses a mood from a dropdown menu to populate matching foods. A create a food page where the user enters fields that match the keys outlined below, which can then be searched later in the user experience.
 
 ## Backend
 
-here's a quick blurb about how our models are set up for our app
+#### Model
+
 ```
-a snippet of the model/models that we'll be using and the seed data we will be pulling from from the backend
+const foodSchema = new Schema ({
+  name: { type: String, required: true },
+  author: String,
+  mood: { type: String, required: true },
+  type: { type: String, required: true },
+  description: { type: String, required: true },
+  img: { type: String, required: true }
+})
+```
+
+#### Related Model
+
+```
+const plateSchema = new Schema ({
+  name: { type: String, required: true },
+  author: String,
+  foods: [
+    {
+      ref: 'Food',
+      type: mongoose.Schema.Types.ObjectId
+    }
+  ]
+})
 ```
 
 ## Routing Table
@@ -24,7 +49,7 @@ a snippet of the model/models that we'll be using and the seed data we will be p
 
 | URL | HTTP Verb | Action | Description   |
 | --- | :---: |  :---:  | :---: |
-| /.. | GET       | index  | get all       |
+| /   | GET       | index  | get all       |
 | /.. | POST      | create | create new    |
 | /.. | PUT       | show   | get single    |
 | /.. | GET       | update | update single |
@@ -46,46 +71,44 @@ a snippet of the model/models that we'll be using and the seed data we will be p
 
  ### MVP
  
-   * mvp
-   * mvp
-   * mvp
-   * mvp
-   * mvp
-   * mvp
+   * Express Server Setup
+   * Install dependencies
+   * Connect Mongoose/MongoDB
+   * Seed data/route
+   * Full CRUD Model #1
+   * Full CRUD Related Model
+   * deploy on Heroku
  
 ### Time Estimates
 
 | Task | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---:  | :---: |
-| mvp   | h | 4  | 6   |
-| mvp   | h | 2  | 2   |
-| mvp   | h | 2  | 1.5 |
-| mvp   | h | 3  | 4   |
-| mvp   | l | 1  | .5  |
-| mvp   | h | 3  | 3   |
-| mvp   | h | 5  | 3   |
-| Total | h | 18 | 20  |
+| express server setup      | h | 1  | x   |
+| install dependencies      | h | 1  | x   |
+| connect mongoose/mongoDB  | h | 1  | x   |
+| seed data/route           | h | 1  | x   |
+| full CRUD model 1         | h | 1  | x   |
+| full CRUD related model   | h | 1  | x   |
+| deploy on Heroku          | h | 1  | x   |
+| Total                     | h | 7  | x   |
     
  ### Post MVP
- 
-  * postmvp
-  * postmvp
-  * postmvp
-  * postmvp
+
+  * add another model
+  * full CRUD on another model
 
   ### Time Estimates
   
 | Task | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| feature | h | 2  | n/a |
-| feature | h | 3  | 1   |
-| feature | l | 3  | 2   |
-| feature | h | 6  | n/a |
-| Total   | h | 14 | 3   |
+| add another model      | l | 2  | x |
+| full CRUD on new model | l | 3  | x |
+| Total                  | h | 5  | x |
 
-## Additional Libraries
+## Additional Resources
 
-  - here go links to any additional libraries we used
+ - [MongoDB Cloud](https://cloud.mongodb.com/)
+ - [Heroku](https://dashboard.heroku.com/)
 
 ## Code Snippet
 
