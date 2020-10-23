@@ -17,7 +17,7 @@ A couple of features we are hoping to have that involve the routes outline below
 
 #### Model
 
-```
+```javascript
 const foodSchema = new Schema ({
   name: { type: String, required: true },
   author: String,
@@ -29,7 +29,7 @@ const foodSchema = new Schema ({
 
 #### Related Model
 
-```
+```javascript
 const moodSchema = new Schema ({
   name: { type: String, required: true }, 
   foods: [
