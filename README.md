@@ -31,13 +31,13 @@ const foodSchema = new Schema ({
 
 ```javascript
 const moodSchema = new Schema ({
-  name: { type: String, required: true }, 
+  _name: { type: String, required: true }, 
   foods: [
     {
       ref: 'Food',
       type: mongoose.Schema.Types.ObjectId
     }
-  ]
+  ]_
 })
 ```
 
