@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Spinach",
+        "author": "Sara",
+        "course": "Dinner",
+        "description": "Yummy leafy goodness",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRTpUTW2FC83hU7eke0E3iZ7vcEzglARm4gow&usqp=CAU"
+    },
+    {
+        "name": "Cheese",
+        "author": "Chase",
+        "course": "Appetizer",
+        "description": "Mmmm, creamy!",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQBpd-de0q-z9rA-2Xxo9QWzQ3l6HZHQBKWEQ&usqp=CAU"
+    },
+    {
+        "name": "Quaratini",
+        "author": "Hannah",
+        "course": "Cocktails",
+        "description": "Bottoms up!",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTevUR6m6my9-SMCT22m9PxGmGvhEAekJriEw&usqp=CAU"
+    },
+    {
+        "name": "Ice Cream",
+        "author": "Kilah",
+        "course": "Desert",
+        "description": "Because, life.",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQi-MXnlobCni-du4X2OczdpYb_qShJvJl4gQ&usqp=CAU"
+    }
+]
