@@ -1,22 +1,10 @@
 [
     {
         "name": "Happy",
-        "foods": [
-            {
-                "ref": {
-                    "Food": "req.params.id"
-                }
-            }
-        ]
+        "foods": []
     },
     {
         "name": "Sad",
-        "foods": [
-            {
-                "ref": {
-                    "Food": "req.params.id"
-                }
-            }
-        ]
+        "foods": []
     }
 ]

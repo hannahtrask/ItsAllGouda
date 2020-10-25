@@ -3,12 +3,12 @@ const { Router } = require("express")
 const router = Router()
 const foodData = require('../db/seedFood.json')
 
-//seed route -- **NOT SURE IF WE NEED THIS?
+//seed route -- this works.
 router.get('/seed', async (req, res) => {
     try {
         await Food.deleteMany({});
         const food = await Food.insertMany(foodData);
-        res.json({ status: 200, data: songs });
+        res.json({ status: 200, data: food });
     } catch (err) {
         res.status(400).json({ err });
     }
