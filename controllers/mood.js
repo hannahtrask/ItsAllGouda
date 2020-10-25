@@ -15,12 +15,12 @@ const router = Router()
 // });
 
 //index route
-router.get("/moods", async (req, res) => {
+router.get("/mood", async (req, res) => {
     res.json(await Mood.find({}))
 })
 
 //create route
-router.post("/moods", async (req, res) => {
+router.post("/mood/moods", async (req, res) => {
     res.json(await Mood.create(req.body))
 })
 
