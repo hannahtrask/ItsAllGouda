@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose")
+const mongoose = require('../db/connection')
 
 //schema
 const moodSchema = new Schema(
