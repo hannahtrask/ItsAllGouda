@@ -24,19 +24,19 @@ router.get("/", async (req, res) => {
 })
 
 //get one mood by id
-router.get('/:id', async (req, res) => {
+router.get('/mood/:id', async (req, res) => {
     const mood = await Mood.findById(req.params.id)
     res.json( {status: 200, data: mood })
 })
 
 //create route
-router.post("/", async (req, res) => {
+router.post("/mood", async (req, res) => {
     const mood = await Mood.create(req.body)
     res.json({ status: 200, data: mood })
 })
 
 //update route - add food to mood by id
-router.put("/:moodsId/addFoods/:foodsId", async (req, res) => {
+router.put("/mood/:moodsId/addFoods/:foodsId", async (req, res) => {
     const food = await Food.findById(req.params.foodsId)
     const mood = await Mood.findByIdAndUpdate(
         req.params.moodsId,
@@ -45,10 +45,6 @@ router.put("/:moodsId/addFoods/:foodsId", async (req, res) => {
         res.json({ status: 200, data: mood })
 })
 
-// //get by id route
-// router.get("/moods/:id", async (req, res) => {
-//     res.json(await Mood.findById(req.params.id))
-// })
 
 //delete route
 router.delete("/:id", async (req, res) => {
