@@ -3,7 +3,6 @@ const { Router } = require("express")
 const router = Router()
 const moodData = require('../db/seedMood.json')
 
-//seed route -- 
 router.get('/seed', async (req, res) => {
     try {
         await Mood.deleteMany({});
