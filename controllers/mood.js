@@ -4,7 +4,7 @@ const router = Router()
 const moodData = require('../db/seedMood.json')
 
 //seed route -- **NOT SURE IF WE NEED THIS?
-router.get('/moods/seed', async (req, res) => {
+router.get('/seed', async (req, res) => {
     try {
         await Mood.deleteMany({});
         const mood = await Mood.insertMany(moodData);
