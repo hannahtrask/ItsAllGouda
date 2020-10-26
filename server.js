@@ -15,9 +15,6 @@ const app = express();
 
 //other imports
 const morgan = require("morgan");
-const foodRouter = require("./controllers/food");
-const moodRouter = require("./controllers/mood");
-const plateRouter = require("./controllers/plate")
 
 //middleware
 NODE_ENV === "production" ? app.use(cors(corsOptions)) : app.use(cors());
@@ -29,7 +26,11 @@ app.get("/", (req, res) => {
     res.json({ hello: "Cool, cool, cool" })
 })
 
-app.use('/gouda', foodRouter)
+const foodController = require('./controllers/food');
+app.use('/foods', foodController)
+const moodController = require('./controllers/mood');
+app.use('/moods', moodController)
+//const plateRouter = require('./controllers/plate');
 
 //listener
 app.listen(PORT, () => {
