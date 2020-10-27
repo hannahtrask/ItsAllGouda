@@ -15,6 +15,7 @@ router.get('/foods/seed', async (req, res) => {
 });
 
 //index route
+
 router.get('/foods', async (req, res) => {
 	res.json(await Food.find({}));
 });
@@ -40,6 +41,7 @@ router.put('/foods/:id', async (req, res) => {
 router.delete('/foods/:id', async (req, res) => {
 	res.json(await Food.findByIdAndRemove(req.params.id));
 });
+
 
 //export router
 module.exports = router;
