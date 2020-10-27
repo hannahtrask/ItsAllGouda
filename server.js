@@ -27,9 +27,9 @@ app.get("/", (req, res) => {
 })
 
 const foodController = require('./controllers/food');
-app.use('/foods', foodController)
+app.use('/gouda', foodController)
 const moodController = require('./controllers/mood');
-app.use('/moods', moodController)
+app.use('/gouda', moodController)
 //const plateRouter = require('./controllers/plate');
 
 //listener
