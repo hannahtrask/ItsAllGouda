@@ -23,9 +23,21 @@ router.get('/moods', async (req, res) => {
 router.get('/moods/happy', async (req, res) => {
 	res.json(await Mood.find({ name: 'Happy' }).populate('foods'));
 });
-//get route by name:sad
-router.get('/moods/sad', async (req, res) => {
-	res.json(await Mood.find({ name: 'Sad' }).populate('foods'));
+//get route by name:blue
+router.get('/moods/blue', async (req, res) => {
+	res.json(await Mood.find({ name: 'Blue' }).populate('foods'));
+});
+//get route by name:sassy
+router.get('/moods/sassy', async (req, res) => {
+	res.json(await Mood.find({ name: 'Sassy' }).populate('foods'));
+});
+//get route by name:mad
+router.get('/moods/mad', async (req, res) => {
+	res.json(await Mood.find({ name: 'Mad' }).populate('foods'));
+});
+//get route by name:punchy
+router.get('/moods/punchy', async (req, res) => {
+	res.json(await Mood.find({ name: 'Punchy' }).populate('foods'));
 });
 //create route
 router.post('/moods', async (req, res) => {

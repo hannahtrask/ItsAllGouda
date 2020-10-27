@@ -4,7 +4,19 @@
         "foods": []
     },
     {
-        "name": "Sad",
+        "name": "Blue",
+        "foods": []
+    },
+        {
+        "name": "Punchy",
+        "foods": []
+    },
+        {
+        "name": "Sassy",
+        "foods": []
+    },
+        {
+        "name": "Mad",
         "foods": []
     }
 ]
