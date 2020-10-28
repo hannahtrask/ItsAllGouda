@@ -3,7 +3,7 @@ const Food = require('../models/food');
 const { Router } = require('express');
 const router = Router();
 const moodData = require('../db/seedMood.json');
-const { STATES } = require('mongoose');
+const { STATES, PromiseProvider } = require('mongoose');
 
 //seed route -- **NOT SURE IF WE NEED THIS?
 router.get('/moods/seed', async (req, res) => {
@@ -15,6 +15,15 @@ router.get('/moods/seed', async (req, res) => {
 		res.status(400).json({ err });
 	}
 });
+
+////NEW ROUTE/// Adds foods through finding the mood first!!! //////////////////
+router.put('/moods/:name', async (req, res) => {
+	const specificMood = await Mood.findOne({ name: req.params.name });
+	const newFood = await Food.create(req.body);
+	res.json(specificMood.foods.push(newFood));
+	specificMood.save();
+});
+
 //index route
 router.get('/moods', async (req, res) => {
 	res.json(await Mood.find({}).populate('foods'));
