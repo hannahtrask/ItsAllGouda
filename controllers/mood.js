@@ -17,7 +17,7 @@ router.get('/moods/seed', async (req, res) => {
 });
 
 ////NEW ROUTE/// Adds foods through finding the mood first!!! //////////////////
-router.get('/moods/:name', async (req, res) => {
+router.put('/moods/:name', async (req, res) => {
 	const specificMood = await Mood.findOne({ name: req.params.name });
 	const newFood = await Food.create(req.body);
 	res.json(specificMood.foods.push(newFood));
