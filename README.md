@@ -126,8 +126,13 @@ const plateSchema = new Schema ({
 
 ## Code Snippet
 
-here's a code snippet or two we're all really proud of, add at the end of the project
+This is a code snippet that allow us to access foods by choosing a mood first.
 
-```
-code snippet
+```javascript
+router.put('/moods/:name', async (req, res) => {
+	const specificMood = await Mood.findOne({ name: req.params.name });
+	const newFood = await Food.create(req.body);
+	res.json(specificMood.foods.push(newFood));
+	specificMood.save();
+});
 ```
