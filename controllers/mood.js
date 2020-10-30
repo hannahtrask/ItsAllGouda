@@ -5,7 +5,7 @@ const router = Router();
 const moodData = require('../db/seedMood.json');
 const { STATES, PromiseProvider } = require('mongoose');
 
-//seed route -- **NOT SURE IF WE NEED THIS?
+//seed route
 router.get('/moods/seed', async (req, res) => {
 	try {
 		await Mood.deleteMany({});
@@ -16,7 +16,7 @@ router.get('/moods/seed', async (req, res) => {
 	}
 });
 
-////NEW ROUTE/// Adds foods through finding the mood first!!! //////////////////
+//add foods through mood
 router.put('/moods/:name', async (req, res) => {
 	const specificMood = await Mood.findOne({ name: req.params.name });
 	const newFood = await Food.create(req.body);
@@ -52,7 +52,7 @@ router.get('/moods/punchy', async (req, res) => {
 router.post('/moods', async (req, res) => {
 	res.json(await Mood.create(req.body));
 });
-//update route - add food to mood by id - could not get this to work before so i copied the one from fruits/owner to get this
+//update route
 router.put('/:moodsId/addFoods/:foodsId', async (req, res) => {
 	const food = await Food.findById(req.params.foodsId);
 	const mood = await Mood.findByIdAndUpdate(req.params.moodsId, {
