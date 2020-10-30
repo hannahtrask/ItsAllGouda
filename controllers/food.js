@@ -3,7 +3,7 @@ const { Router } = require('express');
 const router = Router();
 const foodData = require('../db/seedFood.json');
 
-//seed route -- this works.
+//seed route
 router.get('/foods/seed', async (req, res) => {
 	try {
 		await Food.deleteMany({});
